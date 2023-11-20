@@ -19,14 +19,12 @@ $contact->from_name = $_POST['name'];
 $contact->from_email = $_POST['email'];
 $contact->subject = $_POST['subject'];
 
-// Uncomment below code if you want to use SMTP to send emails. Enter your correct SMTP credentials
 $contact->smtp = array(
-    'host' => 'smtp.rubenschadron.tech	',
+    'host' => 'smtp.rubenschadron.tech',
     'username' => 'ruben@rubenschadron.tech',
     'password' => 'uJtnnZw5',
-    'port' => '587'
+    'port' => '25'
 );
-
 
 // Add form data to the email message
 $contact->add_message($_POST['name'], 'From');
@@ -39,4 +37,5 @@ if ($contact->send()) {
 } else {
     echo 'Error sending message';
 }
+?>
 ?>
