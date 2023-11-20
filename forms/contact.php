@@ -38,4 +38,3 @@ if ($contact->send()) {
     echo 'Error sending message';
 }
 ?>
-?>
