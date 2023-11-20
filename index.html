@@ -27,7 +27,6 @@
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
-
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
@@ -43,12 +42,12 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Ruben Schadron</h1>
-      <p>Ik ben <span class="typed" data-typed-items="Sudent, Developer, Freelancer"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Sudent, Site developer, Discord bot developer, Freelancer"></span></p>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://twitter.com/RSchadron" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/schadron.ruben/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/ruben_schadron/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ruben-schadron-8b0788251/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </section>
@@ -58,7 +57,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Over mezelf</h2>
+          <h2>About me</h2>
         </div>
 
         <div class="row">
@@ -66,7 +65,7 @@
             <section class="picture_Ruben"></section>
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <h3></h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -84,7 +83,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>19</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Middelbaar</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>info@rubenschadron.tech</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>info@rubenschadron.tech</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
@@ -668,17 +667,24 @@
       </div>
     </section>
   </main>
+  <script>
+    $.ajax({
+      type: 'POST',
+      url: 'contact.php',
+      data: formData,  // Assuming you have the form data
+      success: function(response) {
+          console.log(response);
+      }
+  });
+  </script>
 
   <footer id="footer">
     <div class="container">
-      <!-- <h3>Brandon Johnson</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://twitter.com/RSchadron" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/schadron.ruben/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/ruben_schadron/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ruben-schadron-8b0788251/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer>
