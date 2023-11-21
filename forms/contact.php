@@ -21,9 +21,9 @@ $contact->subject = $_POST['subject'];
 
 $contact->smtp = array(
     'host' => 'smtp.rubenschadron.tech',
-    'username' => 'ruben@rubenschadron.tech',
-    'password' => 'uJtnnZw5',
-    'port' => '25'
+    'username' => 'redtgfy@rubenschadron.tech',
+    'password' => 'azertyuiop',
+    'port' => '2556584'
 );
 
 // Add form data to the email message
