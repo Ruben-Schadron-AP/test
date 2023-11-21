@@ -1,40 +1,39 @@
 <?php
-// Replace contact@example.com with your real receiving email address
-$receiving_email_address = 'rubenchadron+website@gmail.com';
-
-// Check if the PHP Email Form library file exists
-if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
-    include($php_email_form);
-} else {
-    die('Unable to load the "PHP Email Form" Library!');
+//Get form data
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+ 
+//validation for the email address
+$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+if (!preg_match($email_exp, $email)) {
+	echo "<p style='color:red;'>The Email address you entered is not valid.</p>";
+	exit;
 }
-
-// Create a new instance of PHP_Email_Form
-$contact = new PHP_Email_Form;
-$contact->ajax = true;
-
-// Set the email configuration
-$contact->to = $receiving_email_address;
-$contact->from_name = $_POST['name'];
-$contact->from_email = $_POST['email'];
-$contact->subject = $_POST['subject'];
-
-$contact->smtp = array(
-    'host' => 'smtp.rubenschadron.tech',
-    'username' => 'redtgfy@rubenschadron.tech',
-    'password' => 'azertyuiop',
-    'port' => '2556584'
-);
-
-// Add form data to the email message
-$contact->add_message($_POST['name'], 'From');
-$contact->add_message($_POST['email'], 'Email');
-$contact->add_message($_POST['message'], 'Message', 10);
-
-// Send the email and echo the result
-if ($contact->send()) {
-    echo 'Message sent successfully';
-} else {
-    echo 'Error sending message';
+ 
+//If everything is ok then send an email
+$to = "ruben@rubenschadr.tech";  //recipient email address
+$subject = "Contact Form";  //Subject of the email
+ 
+//Message content to send in an email
+$message = "Name: ".$name."<br>Email: ".$email."<br> Message: ".$message;
+ 
+// Set content type as HTML
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+ 
+//Email headers
+$headers .= "From:".$email."\r\n";
+//$headers .= "CC: someone@example.com";
+$headers .= "Reply-To:".$email."\r\n";
+ 
+//Send email 
+$sendmail = mail($to, $subject, $message, $headers);
+ 
+if($sendmail == true){ 
+	echo "<p style='color:green;'>Message has been sent successfully.</p>";
+}else {
+	echo "<p style='color:red;'>Message could not be sent.</p>";
 }
 ?>
